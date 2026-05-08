@@ -1,0 +1,80 @@
+/Users/dominhhieu/miniconda3/envs/rag/lib/python3.11/site-packages/guardrails/validator_service/__init__.py:73: UserWarning: Could not obtain an event loop. Falling back to synchronous validation.
+  warnings.warn(
+======================================================================
+  Step 4: Guardrails AI Validators
+======================================================================
+
+======================================================================
+  PII Detection Demo
+======================================================================
+
+
+[Email]
+  Input:  Contact John at john.doe@example.com for details.
+  ⚠️  Detected 1 PII items: {'EMAIL'}
+  Output: Contact John at john.doe@example.com for details.
+
+[Phone]
+  Input:  Call our support line at (555) 867-5309.
+  ⚠️  Detected 1 PII items: {'PHONE'}
+  Output: Call our support line at (555) 867-5309.
+
+[SSN]
+  Input:  Patient SSN is 123-45-6789 on file.
+  ⚠️  Detected 1 PII items: {'SSN'}
+  Output: Patient SSN is 123-45-6789 on file.
+
+[Credit Card]
+  Input:  Payment made with card 4532 1234 5678 9010.
+  ⚠️  Detected 1 PII items: {'CREDIT_CARD'}
+  Output: Payment made with card 4532 1234 5678 9010.
+
+[Multi-PII]
+  Input:  Email: alice@example.com, Phone: 555-123-4567
+  ⚠️  Detected 2 PII items: {'PHONE', 'EMAIL'}
+  Output: Email: alice@example.com, Phone: 555-123-4567
+
+[Clean]
+  Input:  No sensitive information in this text.
+  Output: No sensitive information in this text.
+
+======================================================================
+  JSON Formatting Demo
+======================================================================
+
+
+[Valid JSON]
+  Input:  {"name": "Alice", "age": 30}
+  Status: ✅ Pass
+  Output: {"name": "Alice", "age": 30}
+
+[Markdown fences]
+  Input:  ```json
+{"name": "Bob"}
+```
+  🔧 JSON repaired successfully
+  Status: ✅ Pass
+  Output: ```json
+{"name": "Bob"}
+```
+
+[Single quotes]
+  Input:  {'name': 'Charlie', 'score': 95}
+  🔧 JSON repaired successfully
+  Status: ✅ Pass
+  Output: {'name': 'Charlie', 'score': 95}
+
+[Trailing comma]
+  Input:  {"key": "value",}
+  🔧 JSON repaired successfully
+  Status: ✅ Pass
+  Output: {"key": "value",}
+
+[Truly invalid]
+  Input:  This is not JSON: {]
+  Status: ❌ Fail
+  Output: None
+
+======================================================================
+  ✅ Step 4 Complete: All validator demos passed!
+======================================================================
