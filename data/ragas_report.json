@@ -1,16 +1,16 @@
 {
-  "timestamp": "/Users/dominhhieu/VinUni/Day22/Day22-Track2-LLMops-Prompt-versioning",
+  "timestamp": "/Users/dominhhieu/VinUni/Day22",
   "v1_scores": {
-    "faithfulness": 0.956952380952381,
-    "answer_relevancy": 0.9191209463281996,
+    "faithfulness": 0.9306666666666666,
+    "answer_relevancy": 0.9084121784916249,
     "context_recall": 0.98,
-    "context_precision": 0.9599999999139999
+    "context_precision": 0.9599999999159999
   },
   "v2_scores": {
-    "faithfulness": 0.8379945887445888,
-    "answer_relevancy": 0.896796735358553,
+    "faithfulness": 0.8725598845598845,
+    "answer_relevancy": 0.8991138715423161,
     "context_recall": 0.98,
-    "context_precision": 0.9566666665818332
+    "context_precision": 0.9599999999139999
   },
   "target_faithfulness": 0.8,
   "target_met": true
